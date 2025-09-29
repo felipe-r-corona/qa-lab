@@ -1,0 +1,31 @@
+
+---
+
+### ⚙️ `ci.yml` (starter GitHub Actions workflow)
+
+```yaml
+name: Lab CI
+
+on:
+  push:
+    paths:
+      - 'scripts/**'
+      - 'systemd/**'
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Lint shell scripts
+        run: shellcheck scripts/*.sh || echo "Shellcheck not installed"
+
+      - name: Validate systemd units
+        run: |
+          for unit in systemd/*.service systemd/*.timer; do
+            systemd-analyze verify "$unit" || echo "Validation failed for $unit"
+          done
+

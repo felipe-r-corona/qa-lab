@@ -1,0 +1,20 @@
+# System files
+*.log
+*.swp
+*.bak
+*.tmp
+
+# OS artifacts
+.DS_Store
+Thumbs.db
+
+# Editor folders
+.vscode/
+.idea/
+
+# Python or shell test artifacts
+__pycache__/
+*.pyc
+
+# Optional: runner logs or temp files
+runner-logs/
