@@ -1,0 +1,15 @@
+[Unit]
+Description=Periodic DDNS Push Trigger
+
+[Timer]
+OnBootSec=2min
+OnUnitActiveSec=5min
+Unit=push-ddns.service
+AccuracySec=1min
+Persistent=true
+
+[Install]
+WantedBy=timers.targetUnit=push-ddns.service
+
+[Install]
+WantedBy=timers.target

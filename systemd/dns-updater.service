@@ -1,0 +1,18 @@
+[Unit]
+Description=Dynamic DNS Update Server
+After=network.target
+
+[Service]
+User=dns-updater
+WorkingDirectory=/opt/dns-updater
+ExecStart=/opt/dns-updater/dnsenv/bin/python3 /opt/dns-updater/dns_updater.py
+Restart=always
+RestartSec=5
+Environment="FLASK_ENV=production"
+StandardOutput=journal
+StandardError=journal
+NoNewPrivileges=true
+ProtectSystem=full
+
+[Install]
+WantedBy=multi-user.target

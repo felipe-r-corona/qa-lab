@@ -1,0 +1,4 @@
+[Service]
+WorkingDirectory=/opt/push-ddns
+ExecStart=/opt/push-ddns/push-ddns.sh
+User=ddns-pusher
