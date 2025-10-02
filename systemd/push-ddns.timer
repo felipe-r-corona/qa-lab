@@ -8,8 +8,6 @@ Unit=push-ddns.service
 AccuracySec=1min
 Persistent=true
 
-[Install]
-WantedBy=timers.targetUnit=push-ddns.service
 
 [Install]
 WantedBy=timers.target

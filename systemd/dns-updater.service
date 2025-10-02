@@ -11,8 +11,9 @@ RestartSec=5
 Environment="FLASK_ENV=production"
 StandardOutput=journal
 StandardError=journal
-NoNewPrivileges=true
+#NoNewPrivileges=true
 ProtectSystem=full
+ReadWritePaths=/etc/hosts
 
 [Install]
 WantedBy=multi-user.target
